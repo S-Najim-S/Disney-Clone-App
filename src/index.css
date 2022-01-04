@@ -1,0 +1,41 @@
+:root {
+  --dark-blue: #040714; /* to use css variables use var(--blue);*/
+  --white-text: #f9f9f9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--dark-blue);
+  color: var(--white-text);
+  font-family: Avenir-Roman, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+@media only screen and (min-with: 768px) {
+  body {
+    font-size: 1rem; /*16px*/
+  }
+}
+
+@media only screen and (min-with: 480px) and (max-width: 768px) {
+  body {
+    font-size: 0.9375rem; /*15px*/
+  }
+}
+
+@media only screen and (max-with: 479px) {
+  body {
+    font-size: 0.875rem; /*14px*/
+  }
+}
