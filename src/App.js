@@ -9,9 +9,13 @@ import Login from "./components/Login";
 
 import "./App.css";
 import Header from "./components/Header";
+import Home from "./components/Home";
 
 const App = () => {
-  let routes = useRoutes([{ path: "/", element: <Login /> }]);
+  let routes = useRoutes([
+    { path: "/", element: <Login /> },
+    { path: "/home", element: <Home /> },
+  ]);
   return routes;
 };
 
