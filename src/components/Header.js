@@ -21,7 +21,7 @@ const Header = (props) => {
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      if (!user) {
+      if (user) {
         setUser(user);
         navigate("/home");
       }
@@ -33,6 +33,7 @@ const Header = (props) => {
       signInWithPopup(auth, provider)
         .then((result) => {
           setUser(result.user);
+          navigate("/home");
         })
         .catch((error) => {
           alert(error.message);
@@ -46,9 +47,11 @@ const Header = (props) => {
   };
 
   const setUser = (user) => {
+    console.log(user);
     dispatch(
       setUserLoginDetails({
         name: user.displayName,
+        email: user.email,
         photo: user.photoURL,
       })
     );
