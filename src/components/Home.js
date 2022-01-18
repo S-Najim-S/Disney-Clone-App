@@ -1,18 +1,10 @@
 import styled from "styled-components";
+import ImageSlider from "./ImageSlider";
 
 const Home = (props) => {
   return (
     <Container>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
+      <ImageSlider />
     </Container>
   );
 };
@@ -22,7 +14,7 @@ const Container = styled.div`
   min-height: calc(100vh - 15.625rem);
   overflow-x: hidden;
   display: block;
-  top: 4rem;
+  top: 4.5rem;
   padding: 0 calc(3.5vw + 5px);
 
   &:after {
