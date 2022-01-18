@@ -20,6 +20,7 @@ body {
 a {
   color: #f9f9f9;
   text-decoration: none;
+  cursor: pointer;
 }
 
 @media only screen and (min-with: 768px) {
