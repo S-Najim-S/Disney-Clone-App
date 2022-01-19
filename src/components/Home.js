@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import ImageSlider from "./ImageSlider";
+import Viewer from "./Viewer";
 
 const Home = (props) => {
   return (
     <Container>
       <ImageSlider />
+      <Viewer />
     </Container>
   );
 };
