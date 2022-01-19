@@ -4,23 +4,40 @@ const Viewer = (props) => {
   return (
     <Container>
       <Wrap>
-        <img src="/images/viewers-disney.png" />
+        <img src="/images/viewers-disney.png" id="vid" alt="disney-logo" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source src="/videos/1564674844-disney.mp4" type="video/mp4" />
+        </video>
+      </Wrap>
+      <Wrap>
+        <img src="/images/viewers-marvel.png" alt="marvel-logo" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source src="/videos/1564676115-marvel.mp4" type="video/mp4" />
+        </video>
       </Wrap>
 
       <Wrap>
-        <img src="/images/viewers-marvel.png" />
+        <img src="/images/viewers-national.png" alt="national-logo" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source
+            src="videos/1564676296-national-geographic.mp4"
+            type="video/mp4"
+          />
+        </video>
       </Wrap>
 
       <Wrap>
-        <img src="/images/viewers-national.png" />
+        <img src="/images/viewers-pixar.png" alt="pixar-logo" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source src="/videos/1564676714-pixar.mp4" type="video/mp4" />
+        </video>
       </Wrap>
 
       <Wrap>
-        <img src="/images/viewers-pixar.png" />
-      </Wrap>
-
-      <Wrap>
-        <img src="/images/viewers-starwars.png" />
+        <img src="/images/viewers-starwars.png" alt="starwars-logo" />
+        <video autoPlay={true} loop={true} playsInline={true}>
+          <source src="/videos/1608229455-star-wars.mp4" type="video/mp4" />
+        </video>
       </Wrap>
     </Container>
   );
@@ -61,10 +78,23 @@ const Wrap = styled.div`
     z-index: 1;
     top: 0;
   }
-  /* &:hover {
+  video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    z-index: 0;
+  }
+
+  &:hover {
     border: solid 3px rgb(249, 249, 249, 0.8);
-    transform: scale(1.1);
-  } */
+    transform: scale(1.3);
+
+    video {
+      opacity: 1;
+    }
+  }
 `;
 
 export default Viewer;
