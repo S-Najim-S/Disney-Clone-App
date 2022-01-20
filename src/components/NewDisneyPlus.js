@@ -1,64 +1,23 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { selectNewDisney, selectOriginal } from "../features/movie/movieSlice";
+import { useSelector } from "react-redux";
 
 const NewDisneyPlus = (props) => {
+  const movies = useSelector(selectNewDisney);
   return (
     <Container>
       <h4>New on Disney+</h4>
       <Content>
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://www.teahub.io/photos/full/55-559511_disney-plus-the-mandalorian-poster.jpg"
-              alt="man-poster"
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://www.teahub.io/photos/full/55-559511_disney-plus-the-mandalorian-poster.jpg"
-              alt="man-poster"
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://www.teahub.io/photos/full/55-559511_disney-plus-the-mandalorian-poster.jpg"
-              alt="man-poster"
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://www.teahub.io/photos/full/55-559511_disney-plus-the-mandalorian-poster.jpg"
-              alt="man-poster"
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://www.teahub.io/photos/full/55-559511_disney-plus-the-mandalorian-poster.jpg"
-              alt="man-poster"
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://www.teahub.io/photos/full/55-559511_disney-plus-the-mandalorian-poster.jpg"
-              alt="man-poster"
-            />
-          </Link>
-        </Wrap>
+        {movies &&
+          movies.map((movie, key) => (
+            <Wrap key={key}>
+              {movie.id}
+              <Link to={`detail/` + movie.id}>
+                <img src={movie.cardImg} alt={movie.title} />
+              </Link>
+            </Wrap>
+          ))}
       </Content>
     </Container>
   );
